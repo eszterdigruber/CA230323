@@ -28,22 +28,27 @@ namespace HelloWorld
                 { Evszam = 0; }
                 else
                 { Evszam = int.Parse(f.Ev); }
-                if (1800 < Evszam || Evszam < 1901 )
+                if (1800 < Evszam && Evszam < 1901 )
                 {
                     Evszamok.Add(Evszam);
-                    if (!Tiszta.Contains(Evszam))
-                    { Tiszta.Add(Evszam); }
+                   
                 }
-                foreach (var t in Tiszta)
+               
+            } 
+            foreach (var e in Evszamok)
+            {
+                if (!Tiszta.Contains(Evszam))
+                { Tiszta.Add(Evszam); }
+            }
+            foreach (var t in Tiszta)
+            {
+                int db = 0;
+                foreach (var e in Evszamok)
                 {
-                    int db = 0;
-                    foreach (var e in Evszamok)
-                    {
-                        if (t == e)
-                        { db++; }
-                    }
-                    Console.WriteLine($"{t} : {db}");
+                    if (t == e)
+                    { db++; }
                 }
+                Console.WriteLine($"{t} : {db}");
             }
         }
 
