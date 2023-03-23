@@ -20,7 +20,8 @@ namespace HelloWorld
         {
             Console.WriteLine("9.feladat: Statisztika a 19.században");
             int Evszam = 0;
-            int db = 0;
+            List<int> Evszamok = new List<int>();
+            List<int> Tiszta = new List<int>();
             foreach (var f in Felfed_List)
             {
                 if (f.Ev == "Ókor")
@@ -29,7 +30,9 @@ namespace HelloWorld
                 { Evszam = int.Parse(f.Ev); }
                 if (1800 < Evszam || Evszam < 1901 )
                 {
-                    db++;
+                    Evszamok.Add(Evszam);
+                    if (!Tiszta.Contains(Evszam))
+                    { Tiszta.Add(Evszam); }
                 }
             }
         }
