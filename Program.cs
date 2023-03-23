@@ -31,14 +31,13 @@ namespace HelloWorld
                 if (1800 < Evszam && Evszam < 1901 )
                 {
                     Evszamok.Add(Evszam);
-                   
                 }
                
             } 
             foreach (var e in Evszamok)
             {
-                if (!Tiszta.Contains(Evszam))
-                { Tiszta.Add(Evszam); }
+                if (!Tiszta.Contains(e))
+                { Tiszta.Add(e); }
             }
             foreach (var t in Tiszta)
             {
