@@ -22,6 +22,7 @@ namespace HelloWorld
                 Felfed_List.Add(new Felfedezesek(Beolvas));
             }
             sr.Close();
+            Console.WriteLine($"Beolvasott sorok száma: {Felfed_List.Count}");
         }
     }
 }
