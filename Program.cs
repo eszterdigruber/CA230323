@@ -34,6 +34,16 @@ namespace HelloWorld
                     if (!Tiszta.Contains(Evszam))
                     { Tiszta.Add(Evszam); }
                 }
+                foreach (var t in Tiszta)
+                {
+                    int db = 0;
+                    foreach (var e in Evszamok)
+                    {
+                        if (t == e)
+                        { db++; }
+                    }
+                    Console.WriteLine($"{t} : {db}");
+                }
             }
         }
 
