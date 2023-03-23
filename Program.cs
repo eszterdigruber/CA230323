@@ -15,7 +15,13 @@ namespace HelloWorld
         {
             Console.WriteLine("4.feladat: Beolvasás");
             var sr = new StreamReader(@"felfedezesek.csv", Encoding.UTF8);
-
+            string Beolvas = sr.ReadLine();
+            while (!sr.EndOfStream)
+            {
+                Beolvas = sr.ReadLine();
+                Felfed_List.Add(new Felfedezesek(Beolvas));
+            }
+            sr.Close();
         }
     }
 }
