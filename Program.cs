@@ -12,6 +12,40 @@ namespace HelloWorld
             Feladat4(); Console.WriteLine("\n-------------------------------\n");
             Feladat6(); Console.WriteLine("\n-------------------------------\n");
             Feladat7(); Console.WriteLine("\n-------------------------------\n");
+            Feladat8(); Console.WriteLine("\n-------------------------------\n");
+            Feladat9(); Console.WriteLine("\n-------------------------------\n");
+        }
+
+        private static void Feladat9()
+        {
+            Console.WriteLine("9.feladat: Statisztika a 19.században");
+            int Evszam = 0;
+            int db = 0;
+            foreach (var f in Felfed_List)
+            {
+                if (f.Ev == "Ókor")
+                { Evszam = 0; }
+                else
+                { Evszam = int.Parse(f.Ev); }
+                if (1800 < Evszam || Evszam < 1901 )
+                {
+                    db++;
+                }
+            }
+        }
+
+        private static void Feladat8()
+        {
+            Console.WriteLine("8.feladat: Keresés");
+            int Szamlalo = 0;
+            while (Szamlalo < Felfed_List.Count && KeresVegyjel.ToUpper() != Felfed_List[Szamlalo].Vegyjel.ToUpper())
+            { Szamlalo++; }
+            if (Szamlalo == Felfed_List.Count)
+            {
+                Console.WriteLine("Nem volt ilyen elem");
+            }
+            else
+            { Console.WriteLine($"Felfedezés éve: {Felfed_List[Szamlalo].Ev}"); }
         }
 
         private static void Feladat7()
@@ -19,8 +53,6 @@ namespace HelloWorld
             Console.WriteLine("7.feladat: Bekérés");
             Console.Write("Kérem adjon meg egy vegyjelet: ");
             KeresVegyjel = Console.ReadLine();
-
-
         }
 
         private static void Feladat6()
